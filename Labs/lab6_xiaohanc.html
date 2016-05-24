@@ -1,0 +1,40 @@
+<html>
+	<head>
+		<script language="Javascript">
+		var photos = new Array ; var photocaptions = new Array
+		photos[0] = "washington.jpg" ; photocaptions[0] = "George Washington at the head of his army."
+		photos[1] = "lincoln.jpg" ; photocaptions[1] = "Abraham Lincoln in front of his home."
+		photos[2] = "franklin.jpg" ; photocaptions[2] = "Ben Franklin seated inside his library."
+
+
+
+			function changeImage( index ) { // use javascript
+				var someimage = document.getElementById('imagediv');
+				var myimg = someimage.getElementsByTagName('img')[0];
+				myimg.src=photos[parseInt(index, 10)];
+
+
+				// document.getElementById('imageID').src=photos[parseInt(index, 10)];
+
+		    //Your code goes here to change the HTML of the div with id='imagediv'
+
+		}
+
+		</script>
+	</head>
+
+	<body>
+
+		<select name="sel" onChange="changeImage( this.value )">
+		<option value="0"/>0</option>
+		<option value="1"/>1</option>
+		<option value="2"/>2</option>
+		</select>
+
+	<div id="imagediv">
+		<img src="washington.jpg">
+	</div>
+
+	</body>
+
+</html>

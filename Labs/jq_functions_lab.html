@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions Lab</title>
+  <script>
+
+    /******
+     * This function gathers all information about the image and outputs it to an alert box.
+     * The final message should say "The image has height of X, width of Y, and border of Z".
+     * The first part of the function is complete. You need to continue adding (concatenate) more values to 'theinfo' variable.
+     ******/
+
+
+    function imageInfo(){
+      var theinfo = "The image has height of ";
+      theinfo = theinfo + document.getElementById('theimage').style.height;
+
+      var width = document.getElementById('theimage').style.width;
+      var border = document.getElementById('theimage').style.border;
+
+      theinfo = theinfo +", width of "+width+", and border of "  + border; 
+
+      // Write function code here.
+
+      alert(theinfo);
+    };
+
+    /******
+     * This function has three parameters - when it's called, three pieces of information should be given.
+     * These three parameters are width, height, and border.
+     * This function should have three lines of code.
+     * Each line should set a new style property for the image: width, height, and border.
+     * There is only one image on the page, so you don't have to pass the image name as a parameter.
+     ******/
+    function scaleImage( newWidth, newHeight, newThickness, newColor, newStyle ) {
+      document.getElementById('theimage').style.width = newWidth + 'in';
+      document.getElementById('theimage').style.height = newHeight + 'in';
+      document.getElementById('theimage').style.border = newThickness + 'in ' + newColor + ' ' + newStyle;
+     
+    }
+//     function scaleImage (newWidth, newHeight, newThickness, newColor, newStyle) {
+//       alert("hi");
+//       document.getElmentById('theimage').style.width="5in";
+//       document.getElmentById('theimage').style.height="6in";
+//       document.getElmentById('theimage').style.border=newThickness+'in '+newStyle+" "+newColor;
+ 
+//     };
+  </script>
+
+
+</head>
+<body>
+  <div style="float:left; width:500px;">
+    <form id="form1" name="f1" method="post" action="">
+      <p>Image Scaling</p>
+      <p>
+        <label>Width (in inches)
+          <input name="w" type="text" id="w" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Height  (in inches)
+          <input name="h" type="text" id="h" />
+        </label>
+      </p>
+      <p>
+        <label>
+          Color
+          <input name="colorA" type="color" id="color" />
+        </label>
+                
+      </p>
+
+     
+      <p>
+        <label>
+          Thickness (in inches)
+          <input name="thickness" type="text" id="thickness" />
+        </label>
+      </p>
+
+       <p>
+        <label>
+          Style
+          <select name="styleA">
+            <option value="solid">Solid</option>
+            <option value="groove">Groove</option>
+            <option value="double">Double</option>
+            <option value="dashed">Dashed</option>
+            <option value="ridge">Ridge</option>
+          </select>
+          
+        </label>
+      </p>
+      <p>
+        <label>
+          <!-- This button should have 'onclick' trigger that calls 'scaleImage' function. When 'scaleImage' is called, you need to pass it width, height, and border as parameters. That data should come from the form fields. -->
+          <input type="button" name="Button" 
+          onClick="scaleImage(document.f1.w.value, document.f1.h.value,  document.f1.thickness.value, document.f1.colorA.value, document.f1.styleA.value )" value="Scale Image">
+        </label>
+      </p>
+      <p>
+        <label>
+          <!-- This button should have 'onclick' trigger that calls 'imageInfo' function. -->
+          <input type="button" name="Button" onClick ="imageInfo()" value="Current Image Info">
+        </label>
+      </p>
+    </form>
+  </div>
+  <div style="float:left;width:400px">
+    <img name="theimage" id="theimage" src="familyguy.jpg" style="width:320px; height:400px; border: solid 5px blue " />
+  </div>
+
+
+</body>
+</html>

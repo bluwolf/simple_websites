@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+
+<SCRIPT LANGUAGE="JavaScript">
+
+var ssn = new Array()
+ssn[0] = 3
+ssn[1] = 7
+ssn[2] = 9
+ssn[3] = 34
+ssn[4] = 39
+ssn[5] = 49
+ssn[6] = 134
+ssn[7] = 158
+ssn[8] = 211
+ssn[9] = 220
+ssn[10] = 222
+ssn[11] = 231
+ssn[12] = 236
+ssn[13] = 246
+ssn[14] = 251
+ssn[15] = 260
+ssn[16] = 267
+ssn[17] = 302
+ssn[18] = 317
+ssn[19] = 361
+ssn[20] = 386
+ssn[21] = 399
+ssn[22] = 407
+ssn[23] = 415
+ssn[24] = 424
+ssn[25] = 428
+ssn[26] = 432
+ssn[27] = 439
+ssn[28] = 448
+ssn[29] = 467
+ssn[30] = 477
+ssn[31] = 485
+ssn[32] = 500
+ssn[33] = 502
+ssn[34] = 504
+ssn[35] = 508
+ssn[36] = 515
+ssn[37] = 517
+ssn[38] = 519
+ssn[39] = 520
+ssn[40] = 524
+ssn[41] = 525
+ssn[42] = 527
+ssn[43] = 529
+ssn[44] = 530
+ssn[45] = 539
+ssn[46] = 544
+ssn[47] = 573
+ssn[48] = 574
+ssn[49] = 576
+ssn[50] = 579
+ssn[51] = 580
+ssn[52] = 584
+ssn[53] = 585
+ssn[54] = 586
+ssn[55] = 599
+ssn[56] = 728
+
+var states = new Array()
+states[0] = "New Hampshire"
+states[1] = "Maine"
+states[2] = "Vermont"
+states[3] = "Massachusetts"
+states[4] = "Rhode Island"
+states[5] = "Connecticut"
+states[6] = "New York"
+states[7] = "New Jersey"
+states[8] = "Pennsylvania"
+states[9] = "Maryland"
+states[10] = "Delaware"
+states[11] = "Virginia"
+states[12] = "West Virginia"
+states[13] = "North Carolina"
+states[14] = "South Carolina"
+states[15] = "Georgia"
+states[16] = "Florida"
+states[17] = "Ohio"
+states[18] = "Indiana"
+states[19] = "Illinois"
+states[20] = "Michigan"
+states[21] = "Wisconsin"
+states[22] = "Kentucky"
+states[23] = "Tennessee"
+states[24] = "Alabama"
+states[25] = "Mississippi"
+states[26] = "Arkansas"
+states[27] = "Louisiana"
+states[28] = "Oklahoma"
+states[29] = "Texas"
+states[30] = "Minnesota"
+states[31] = "Iowa"
+states[32] = "Missouri"
+states[33] = "North Dakota"
+states[34] = "South Dakota"
+states[35] = "Nebraska"
+states[36] = "Kansas"
+states[37] = "Montana"
+states[38] = "Idaho"
+states[39] = "Wyoming"
+states[40] = "Colorado"
+states[41] = "New Mexico"
+states[42] = "Arizona"
+states[43] = "Utah"
+states[44] = "Nevada"
+states[45] = "Washington"
+states[46] = "Oregon"
+states[47] = "California"
+states[48] = "Alaska"
+states[49] = "Hawaii"
+states[50] = "District of Columbia"
+states[51] = "Virgin Islands"
+states[52] = "Puerto Rico"
+states[53] = "New Mexico"
+states[54] = "Guam, American Samoa, N. Mariana Isl., Philippines"
+states[55] = "Puerto Rico"
+states[56] = "Long-time or retired railroad workers"
+
+var findssn = function(thessn)
+{
+	alert('Searching for ' + thessn);
+    
+    for( i=0; i<ssn.length; i++){
+        var n = parseInt(thessn);
+        if(n <= ssn[i]){
+            alert("state is " + states[i]);
+            break;
+        }
+        
+	    
+    }
+
+        
+}
+</script>
+
+
+Enter your Social Security Number (or JUST the first three digits) to see what state your SSN was registered in!
+
+<br />
+<input type="text" id="ssnbox" /><input type="button" value="Search" onclick="findssn(document.getElementById('ssnbox').value)"  />
+</body>
+</html>

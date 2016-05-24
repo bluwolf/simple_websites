@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS Objects Lab</title>
+  <style id="jsbin-css">
+  ul{
+    line-height: 25px;
+  }
+
+  #img-table {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+  }
+  #img-table td {
+    text-align: center;
+  }
+  #img-table #ttrojan {
+    height: 200px;
+  }
+  #img-table .arrow {
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  </style>
+</head>
+<body>  
+  <table id="img-table" style="width:300px; height:350px; visibility:visible;">
+    <tbody>
+      <tr>
+        <td></td>
+        <td><img class="arrow" id="arrowUp" onclick="image.moveUp()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/up.gif"></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><img class="arrow" id="arrowLeft" onclick="image.moveLeft()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/left.gif"></td>
+        <td><img id="ttrojan" src="http://images.fineartamerica.com/images-medium-large/usc-tommy-trojan-tommy-anderson.jpg"></td>
+        <td><img class="arrow" id="arrowRight" onclick="image.moveRight()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/right.gif"></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><img class="arrow" id="arrowDown" onclick="image.moveDown()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/down.gif"></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

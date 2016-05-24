@@ -1,0 +1,146 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<style type="text/css">
+<!--
+body {
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
+#thelayer {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:3;
+	left: 254px;
+	top: 406px;
+}
+#messagelayer {
+	position:absolute;
+	width:600px;
+	height:40px;
+	z-index:5;
+	left: 500px;
+	top: 20px;
+}
+
+</style>
+<script src="http://webdev.usc.edu/jquery.js"></script>
+<script>
+    
+ var visibilityToggle = function() {
+     $( "#thelayer" ).toggle();
+}
+    
+  var moveLayer = function() {
+     $("#thelayer").css('margin-left', '400px')
+     $("#thelayer").css('padding', '400px')
+  }
+  
+    var moveLeft = function() {
+     $("#thelayer").css('left', '-=10px')
+    }
+    
+    var moveRight = function() {
+     $("#thelayer").css('left', '+=10px')
+    }
+    var moveUp = function() {
+     $("#thelayer").css('top', '-=10px')
+    }
+    var moveDown = function() {
+     $("#thelayer").css('top', '+=10px')
+     }
+    
+    
+    // centering function
+    jQuery.fn.center = function () {
+    this.css("position","absolute");
+    this.css("top", Math.max(0, (($(window).height() - $(this).outerHeight()) / 2) + 
+                                                $(window).scrollTop()) + "px");
+    this.css("left", Math.max(0, (($(window).width() - $(this).outerWidth()) / 2) + 
+                                                $(window).scrollLeft()) + "px");
+    return this;
+    }
+    
+    var centerElement = function(){
+        $("#thelayer").center();
+    }
+    var promptUser = function(){
+
+        var c = prompt("Please Enter Top Coordinate Without keyword 'px' ", "");
+        if (c != null) {      
+            $("#thelayer").css('top', c+'px');
+        }
+    }
+    
+
+var info = function() {
+    
+
+	var summary = "Summary of the navigator, browser and other information for the page<hr />"
+	summary = summary + "<strong>Individual Browser checks (.webkit, .mozilla, etc.):</strong><br />" + "NOT used in jQuery. Older $.browser.webkit, $.browser.mozilla, etc., is depricated and then removed from jQ"
+	summary = summary + "<br /> <br />"
+	summary = summary + "<strong>Browser Version:</strong><br />" + "NOT used in jQuery. Older $.browser.version was depricated and then removed from jQ"
+	summary = summary + "<br /> <br />"
+	summary = summary + "<strong>Window width:</strong><br />" + $(window).width()
+	summary = summary + "<br /> <br />"
+	summary = summary + "<strong>Window height</strong>:<br />" + $(window).height()
+	summary = summary + "<br /> <br />"
+	summary = summary + "<strong>the css() background property of the body tag " + $("body").css("background-color")
+	summary = summary + " <br />"
+
+	$("#messagelayer").html(summary);
+}
+    
+    
+
+
+</script>
+</head>
+<body>
+Can you write JS to:
+<ul>
+<li> <input type="button" value="Toggle the visibility of the element with ID='thelayer'?" id="toggle" onclick="visibilityToggle()"/>
+<br />&nbsp;
+<li> <input type="button" value="Move 'thelayer' to 400,400" id="move400" onclick="moveLayer()"/>
+<br />&nbsp;
+<li> <input type="button" value="Move 'thelayer' 10 pixels to the LEFT" id="move10left" onclick="moveLeft()"/>
+<br />&nbsp;
+<li> <input type="button" value="Enable the 'arrows' to move 'thelayer' around the page" />
+<br />&nbsp;
+<li> <input type="button" value="Center 'thelayer' on the page" id="center" onclick="centerElement()"/>
+<br />&nbsp;
+<li> <input type="button" value="Move 'thelayer' to the top coordinate that the user types into a prompt" id="prompttop" onclick="promptUser()"/>
+<br />&nbsp;
+<li> <input type="button" value="Summarize the current information about the layer and write that information into the message layer" id="layerinfo" onclick = "info()"/>
+</ul>
+    <div id="messagelayer">
+        
+	</div>
+    <div id="thelayer">
+      <table width="100%" border="0">
+        <tr>
+          <td>&nbsp;</td>
+          <td align="center"><img onclick="moveUp()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/up.gif" width="40" height="38" /></td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+
+          <td><img onclick="moveLeft()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/left.gif" width="37" height="38" /></td>
+          <td><img src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/owl_figure.jpg" width="148" height="243" /></td>
+          <td><img onclick="moveRight()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/right.gif" width="40" height="38" /></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align="center"><img onclick="moveDown()" src="http://webdev.usc.edu/itp301/lecture_examples/layers_watchmen/down.gif" width="38" height="39" /></td>
+          <td>&nbsp;</td>
+        </tr>
+
+      </table>
+    </div>
+
+</body>
+</html>
